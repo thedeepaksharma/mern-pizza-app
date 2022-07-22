@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-items-list">
-          <Link to="/home" className="nav-link">
+          <Link to="/" className="nav-link">
             pizza hub
           </Link>
           <Link to="/products" className="nav-link">

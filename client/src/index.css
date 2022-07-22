@@ -119,3 +119,47 @@ nav svg {
   margin-bottom: 0;
   font-size: 1.25rem;
 }
+
+/*
+=============== 
+Login Form
+===============
+*/
+.form{
+  width: 70rem;
+  margin: 2rem auto;
+}
+table{
+  width: 100%;
+}
+table ::placeholder {
+  padding: .5rem;
+  margin: .2rem;
+  letter-spacing: .1rem;
+}
+th,td{
+  padding: .5rem 0 0 0;
+  letter-spacing: .1rem;
+}
+table p{
+  margin: 1rem 0 0 0 !important;
+}
+input{
+  width: 20rem;
+  height: 1.8rem;
+  outline: none;
+}
+.submit-btn{
+  color: #fff;
+  background: #645cff;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 1rem 0 0 0;
+  padding: .2rem 1rem;
+  border-radius: .2rem;
+  letter-spacing: .1rem;
+}
+.register-link, .login-link{
+  font-size: 1.2rem;
+  color: #645cff;
+}
