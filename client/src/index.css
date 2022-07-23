@@ -122,7 +122,7 @@ nav svg {
 
 /*
 =============== 
-Login Form
+Login/Register Form
 ===============
 */
 .form{
@@ -162,4 +162,91 @@ input{
 .register-link, .login-link{
   font-size: 1.2rem;
   color: #645cff;
+}
+
+/*
+=============== 
+Products
+===============
+*/
+.specials-title {
+  text-align: center;
+  margin: 2rem 0 0 0;
+}
+
+/*
+=============== 
+Product
+===============
+*/
+.special-items-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80rem;
+  margin: 2rem auto;
+}
+.special-product img{
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: all .2s linear
+}
+.special-product img:hover {
+  transform: scale(1.05);
+}
+.special-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  width: 22rem;
+  border: 1px solid lightslategray;
+  padding: .3rem;
+}
+.special-product h4{
+  margin: .2rem 0;
+}
+.addTocart-btn{
+  color: #fff;
+  background: #645cff;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: .7rem 0 .7rem 0;
+  padding: .3rem 1rem;
+  border-radius: .2rem;
+  letter-spacing: .1rem;
+  border: none;
+  cursor: pointer;
+  transition-property: background;
+  transition-duration: .2s;
+}
+.addTocart-btn:hover{
+  background: #0f08a4;
+}
+
+/*
+=============== 
+Cart
+===============
+*/
+.cart-items{
+  width: 50rem;
+  margin: 2rem auto;
+}
+.cart-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin: .5rem 0;
+}
+.cart-row img{
+  width: 8rem;
+  padding: .1rem 0;
+}
+.cart-row h3{
+  margin: .5rem 2rem;
+  float: left;
 }

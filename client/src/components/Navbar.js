@@ -18,7 +18,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav-container">
-          <CartIcon />
+          <Link to="/cart" className="cart-icon">
+            <CartIcon />
+          </Link>
           <div className="amount-container">
             <p className="total-amount">5</p>
           </div>
