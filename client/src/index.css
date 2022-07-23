@@ -231,22 +231,96 @@ Product
 Cart
 ===============
 */
-.cart-items{
+.cart-container{
   width: 50rem;
   margin: 2rem auto;
+}
+.cart-container h2{
+  text-align: center;
+  margin: 2rem;
+}
+.empty-cart {
+  text-transform: lowercase;
+  color: #645cff;
+  margin-top: 1rem;
+  text-align: center;
 }
 .cart-row{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  margin: .5rem 0;
+  margin: 1rem 0;
 }
 .cart-row img{
   width: 8rem;
   padding: .1rem 0;
 }
 .cart-row h3{
-  margin: .5rem 2rem;
+  margin: 0 2rem;
   float: left;
 }
+.remove-column{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.remove-btn {
+  font-size: 1.2rem;
+  color: #645cff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: .3rem;
+  transition-property: color;
+  transition-duration: .2s;
+}
+.remove-btn:hover {
+  color: #0f08a4;
+}
+.chevron-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.amount-btn {
+  width: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.amount{
+  text-align: center;
+  width: 1.2rem;
+}
+hr {
+  background: #645cff;
+  border-color: transparent;
+  border-width: 0.25px;
+}
+.cart-total h4 {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.clear-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: rgb(152, 7, 7);
+  border: 1px solid rgb(152, 7, 7);
+  margin-top: 0.25rem;
+  border-radius: 0.25rem;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: hsl(360, 71%, 66%);
+  color: rgb(152, 7, 7);
+  border-color: hsl(360, 71%, 66%);
+}
+
+
