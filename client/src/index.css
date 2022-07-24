@@ -143,6 +143,7 @@ th,td{
 }
 table p{
   margin: 1rem 0 0 0 !important;
+  float: left;
 }
 input{
   width: 20rem;

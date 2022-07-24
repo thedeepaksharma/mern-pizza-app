@@ -17,7 +17,6 @@ const Register = () => {
         email,
         password,
       });
-      console.log(name);
       res.data && window.location.replace("/");
     } catch (err) {}
   };
