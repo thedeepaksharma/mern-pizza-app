@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -7,9 +8,23 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/api/auth/register", {
+        name,
+        username,
+        email,
+        password,
+      });
+      console.log(name);
+      res.data && window.location.replace("/");
+    } catch (err) {}
+  };
+
   return (
     <section>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <table>
           <tr>
             <th>
@@ -71,9 +86,9 @@ const Register = () => {
             <th></th>
             <td>
               <button
-                disabled={name && username && email && password ? false : true}
                 type="submit"
                 className="submit-btn"
+                disabled={name && username && email && password ? false : true}
               >
                 register
               </button>

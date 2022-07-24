@@ -158,10 +158,12 @@ input{
   padding: .2rem 1rem;
   border-radius: .2rem;
   letter-spacing: .1rem;
+  cursor: pointer;
 }
 .register-link, .login-link{
   font-size: 1.2rem;
   color: #645cff;
+  cursor: pointer;
 }
 
 /*
@@ -323,4 +325,52 @@ hr {
   border-color: hsl(360, 71%, 66%);
 }
 
+/*
+=============== 
+Services
+===============
+*/
+.services {
+  width: 70rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.service {
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+.service span {
+  color: #645cff;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.service h4,p {
+  letter-spacing: .2rem;
+  text-align: center;
+}
+.service h4{
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
+/*
+=============== 
+Banner
+===============
+*/
+.banner{
+  width: 70rem;
+  margin: 2rem auto;
+}
+.banner h3 {
+  text-align: center;
+}

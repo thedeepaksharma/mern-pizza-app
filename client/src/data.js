@@ -14,7 +14,7 @@ export const data = [
     amount: 1,
   },
   {
-    id: 13.25,
+    id: 13,
     img: "https://images.pexels.com/photos/845811/pexels-photo-845811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Pizza Margherita",
     price: 18.49,
@@ -31,7 +31,7 @@ export const data = [
     id: 15,
     img: "https://images.pexels.com/photos/1435900/pexels-photo-1435900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Mushroom Pie Pizza",
-    price: 15.5,
+    price: 15.25,
     amount: 1,
   },
 ];

@@ -7,6 +7,7 @@ import Products from "./components/Products";
 import CartContainer from "./components/CartContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotals } from "./features/cart/productSlice";
+import Home from "./components/Home";
 
 function App() {
   const { cartItems } = useSelector((store) => store.product);
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/products" element={<Products />} />
