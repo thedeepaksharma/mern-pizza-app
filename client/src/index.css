@@ -133,8 +133,6 @@ table{
   width: 100%;
 }
 table ::placeholder {
-  padding: .5rem;
-  margin: .2rem;
   letter-spacing: .1rem;
 }
 th,td{
@@ -166,6 +164,10 @@ input{
   color: #645cff;
   cursor: pointer;
 }
+.logout{
+  width: 50rem;
+  margin: auto;
+}
 
 /*
 =============== 
@@ -176,7 +178,21 @@ Products
   text-align: center;
   margin: 2rem 0 0 0;
 }
-
+/*
+=============== 
+Add New Product
+===============
+*/
+nav svg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form input[type=text],input[type=email],input[type=password]{
+  padding: .5rem;
+  margin: .2rem;
+  letter-spacing: .1rem;
+}
 /*
 =============== 
 Product
@@ -313,18 +329,35 @@ hr {
   padding: 0.5rem 1rem;
   color: rgb(152, 7, 7);
   border: 1px solid rgb(152, 7, 7);
-  margin-top: 0.25rem;
+  margin-top: 1rem;
   border-radius: 0.25rem;
   text-transform: capitalize;
   letter-spacing: 0.2rem;
   cursor: pointer;
 }
-
 .clear-btn:hover {
   background: hsl(360, 71%, 66%);
   color: rgb(152, 7, 7);
   border-color: hsl(360, 71%, 66%);
 }
+.checkout-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: green;
+  border: 1px solid green;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  float: right;
+}
+.checkout-btn:hover {
+  background: rgb(95, 205, 99);
+  color: green;
+  border-color: rgb(95, 205, 99);
+}
+
 
 /*
 =============== 

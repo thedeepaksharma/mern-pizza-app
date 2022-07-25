@@ -6,8 +6,10 @@ import Register from "./pages/Register";
 import Products from "./components/Products";
 import CartContainer from "./components/CartContainer";
 import { useSelector, useDispatch } from "react-redux";
-import { calculateTotals } from "./features/cart/productSlice";
+import { calculateTotals, getProducts } from "./features/cart/productSlice";
 import Home from "./components/Home";
+import AddProduct from "./pages/AddProduct";
+import Logout from "./pages/Logout";
 
 function App() {
   const { cartItems } = useSelector((store) => store.product);
@@ -15,16 +17,31 @@ function App() {
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
+  const user = useSelector((state) => state.user.currentUser);
 
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
+        {/* <Route
+          exact
+          path="/login"
+          element={user ? <Navigate to="/" replace /> : <Login />}
+        /> */}
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/cart" element={<CartContainer />} />
+        <Route exact path="/addproduct" element={<AddProduct />} />
+        {user ? (
+          <Route exact path="/logout" element={<Logout />} />
+        ) : (
+          <Route exact path="/login" element={<Login />} />
+        )}
       </Routes>
     </Router>
   );

@@ -11,7 +11,7 @@ const Products = () => {
       </div>
       <div className="special-items-container">
         {data.map((item) => {
-          return <Product key={item.id} {...item} />;
+          return <Product key={item._id} {...item} />;
         })}
       </div>
     </section>

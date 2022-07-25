@@ -13,7 +13,7 @@ const Cart = (item) => {
           <h3>{item.title}</h3>
           <button
             className="remove-btn"
-            onClick={() => dispatch(removeItem(item.id))}
+            onClick={() => dispatch(removeItem(item._id))}
           >
             remove
           </button>
@@ -22,7 +22,7 @@ const Cart = (item) => {
         <div className="chevron-btn">
           <button
             className="amount-btn"
-            onClick={() => dispatch(increase(item.id))}
+            onClick={() => dispatch(increase(item._id))}
           >
             <ChevronUp />
           </button>
@@ -31,10 +31,10 @@ const Cart = (item) => {
             className="amount-btn"
             onClick={() => {
               if (item.amount === 1) {
-                dispatch(removeItem(item.id));
+                dispatch(removeItem(item._id));
                 return;
               }
-              dispatch(decrease(item.id));
+              dispatch(decrease(item._id));
             }}
           >
             <ChevronDown />

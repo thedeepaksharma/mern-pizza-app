@@ -1,20 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { login } from "../redux/apiCalls";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post("/api/auth/login", {
-        username,
-        password,
-      });
-      res.data && window.location.replace("/");
-    } catch (err) {}
+    login(dispatch, { username, password });
   };
 
   return (

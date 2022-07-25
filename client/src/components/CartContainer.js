@@ -2,6 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
 import { clearCart } from "../features/cart/productSlice";
+import StripeCheckout from "react-stripe-checkout";
+
+const KEY = process.env.REACT_STRIPE;
 
 const CartContainer = () => {
   const { cartItems, amount, total } = useSelector((store) => store.product);
@@ -23,7 +26,7 @@ const CartContainer = () => {
       </header>
       <div>
         {cartItems.map((item) => {
-          return <Cart key={item.id} {...item} />;
+          return <Cart key={item._id} {...item} />;
         })}
       </div>
       <footer>
@@ -36,6 +39,7 @@ const CartContainer = () => {
         <button className="clear-btn" onClick={() => dispatch(clearCart())}>
           clear cart
         </button>
+        <button className="checkout-btn">check out</button>
       </footer>
     </section>
   );

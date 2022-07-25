@@ -2,9 +2,11 @@ import React from "react";
 import { CartIcon } from "../icons";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FaPlus } from "react-icons/fa";
 
 const Navbar = () => {
   const { amount } = useSelector((state) => state.product);
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -15,8 +17,18 @@ const Navbar = () => {
           <Link to="/products" className="nav-link">
             products
           </Link>
-          <Link to="/login" className="nav-link">
-            login
+          {user ? (
+            <Link to="/logout" className="nav-link">
+              logout
+            </Link>
+          ) : (
+            <Link to="/login" className="nav-link">
+              login
+            </Link>
+          )}
+
+          <Link to="/addproduct" className="nav-link">
+            <FaPlus />
           </Link>
         </div>
         <div className="nav-container">
