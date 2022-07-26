@@ -2,9 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
 import { clearCart } from "../features/cart/productSlice";
-import StripeCheckout from "react-stripe-checkout";
-
-const KEY = process.env.REACT_STRIPE;
 
 const CartContainer = () => {
   const { cartItems, amount, total } = useSelector((store) => store.product);

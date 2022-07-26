@@ -7,6 +7,8 @@ import { FaPlus } from "react-icons/fa";
 const Navbar = () => {
   const { amount } = useSelector((state) => state.product);
   const user = useSelector((state) => state.user.currentUser);
+  const isAdmin = user?.isAdmin;
+
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -17,19 +19,16 @@ const Navbar = () => {
           <Link to="/products" className="nav-link">
             products
           </Link>
-          {user ? (
-            <Link to="/logout" className="nav-link">
-              logout
-            </Link>
-          ) : (
+          {!user && (
             <Link to="/login" className="nav-link">
               login
             </Link>
           )}
-
-          <Link to="/addproduct" className="nav-link">
-            <FaPlus />
-          </Link>
+          {isAdmin && (
+            <Link to="/addproduct" className="nav-link">
+              <FaPlus />
+            </Link>
+          )}
         </div>
         <div className="nav-container">
           <Link to="/cart" className="cart-icon">

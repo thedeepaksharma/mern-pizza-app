@@ -15,16 +15,18 @@ export const login = async (dispatch, user) => {
   try {
     const res = await adminRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
+    res.data && window.location.replace("/");
   } catch (err) {
     dispatch(loginFailure());
   }
 };
 
-export const addProduct = async (dispatch, product) => {
+export const addProduct = async (dispatch, user) => {
   dispatch(addProductStart());
   try {
-    const res = await adminRequest.post("/product", product);
+    const res = await adminRequest.post("/product", user);
     dispatch(addProductSuccess(res.data));
+    res.data && window.location.replace("/");
   } catch (err) {
     dispatch(addProductFailure());
   }

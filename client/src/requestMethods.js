@@ -1,8 +1,12 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:5000/api/";
-const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZGNmMTkyOTY1YzE5MTdmMjE5OWVkYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1ODczMDQ2MSwiZXhwIjoxNjU4OTAzMjYxfQ.sLycz7nju9qZmb4ymyy5txa_uKCl57xSDaR4SSXud78";
+
+const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
+const currentUser = user && JSON.parse(user).currentUser;
+const TOKEN = currentUser?.accessToken;
+
+export const role = TOKEN && TOKEN.split(".")[1];
 
 export const publicRequest = axios.create({
   baseURL: BASE_URL,
@@ -11,6 +15,6 @@ export const publicRequest = axios.create({
 export const adminRequest = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `Bearer ${TOKEN}`,
+    token: `Bearer ${TOKEN}`,
   },
 });

@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Products from "./components/Products";
@@ -9,7 +14,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { calculateTotals, getProducts } from "./features/cart/productSlice";
 import Home from "./components/Home";
 import AddProduct from "./pages/AddProduct";
-import Logout from "./pages/Logout";
 
 function App() {
   const { cartItems } = useSelector((store) => store.product);
@@ -28,20 +32,15 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* <Route
+        <Route
           exact
           path="/login"
           element={user ? <Navigate to="/" replace /> : <Login />}
-        /> */}
+        />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/cart" element={<CartContainer />} />
         <Route exact path="/addproduct" element={<AddProduct />} />
-        {user ? (
-          <Route exact path="/logout" element={<Logout />} />
-        ) : (
-          <Route exact path="/login" element={<Login />} />
-        )}
       </Routes>
     </Router>
   );

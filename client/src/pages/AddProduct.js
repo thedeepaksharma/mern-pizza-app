@@ -4,15 +4,14 @@ import { addProduct } from "../redux/apiCalls";
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+  const [img, setImg] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //login(dispatch, { username, password });
-    addProduct(dispatch, { title, image, price, amount });
+    addProduct(dispatch, { title, img, price, amount });
   };
 
   return (
@@ -35,15 +34,15 @@ const AddProduct = () => {
           </tr>
           <tr>
             <th>
-              <label htmlFor="image">Image Url</label>
+              <label htmlFor="img">Image Url</label>
             </th>
             <td>
               <input
                 type="text"
-                id="image"
-                name="image"
-                placeholder="image"
-                onChange={(e) => setImage(e.target.value)}
+                id="img"
+                name="img"
+                placeholder="image url"
+                onChange={(e) => setImg(e.target.value)}
               />
             </td>
           </tr>
@@ -81,7 +80,7 @@ const AddProduct = () => {
               <button
                 type="submit"
                 className="submit-btn"
-                disabled={title && image && price && amount ? false : true}
+                disabled={title && img && price && amount ? false : true}
               >
                 add product
               </button>
