@@ -408,3 +408,15 @@ Banner
 .banner h3 {
   text-align: center;
 }
+/*
+=============== 
+Orders
+===============
+*/
+.orders{
+  width: 90%;
+  margin: auto;
+}
+.orders-btn {
+  text-align: center;
+}

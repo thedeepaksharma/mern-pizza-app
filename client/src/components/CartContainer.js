@@ -6,9 +6,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useNavigate } from "react-router-dom";
 import { adminRequest } from "../requestMethods";
 
-// const KEY = process.env.REACT_STRIPE;
-const KEY =
-  "pk_test_51Jk05iSHjFXv3zpm1x2vs0TEOQRZRIY3WLh8y6u9ShAqOQVyksGZcVmPIWhWm5WjSH8Ndbku7h33BLLHYfSviGtO00CFaMdFbb";
+const KEY = process.env.REACT_STRIPE;
 
 const CartContainer = () => {
   const { cartItems, amount, total } = useSelector((store) => store.product);
@@ -25,12 +23,17 @@ const CartContainer = () => {
       try {
         const res = await adminRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: 10,
+          amount: total.toFixed(2) * 100,
         });
-        console.log("res ", res);
+        navigate(
+          "/success",
+          { replace: true },
+          {
+            stripeData: res.data,
+          }
+        );
       } catch {}
     };
-    console.log(stripeToken);
     stripeToken && makeRequest();
   }, [stripeToken, total, navigate]);
 

@@ -29,6 +29,11 @@ const Navbar = () => {
               <FaPlus />
             </Link>
           )}
+          {isAdmin && (
+            <Link to="/dashboard" className="nav-link">
+              Dashboard
+            </Link>
+          )}
         </div>
         <div className="nav-container">
           <Link to="/cart" className="cart-icon">

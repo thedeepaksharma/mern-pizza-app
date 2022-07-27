@@ -14,6 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { calculateTotals, getProducts } from "./features/cart/productSlice";
 import Home from "./components/Home";
 import AddProduct from "./pages/AddProduct";
+import Success from "./pages/Success";
+import { Dashboard } from "./components/Dashboard";
 
 function App() {
   const { cartItems } = useSelector((store) => store.product);
@@ -26,6 +28,7 @@ function App() {
   }, []);
 
   const user = useSelector((state) => state.user.currentUser);
+  const isAdmin = user?.isAdmin;
 
   return (
     <Router>
@@ -41,6 +44,9 @@ function App() {
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/cart" element={<CartContainer />} />
         <Route exact path="/addproduct" element={<AddProduct />} />
+        <Route exact path="/success" element={<Success />} />
+        <Route exact path="/dashboard" element={isAdmin && <Dashboard />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
